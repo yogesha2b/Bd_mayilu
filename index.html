@@ -1,1 +1,3372 @@
-hii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06152f">
+
+<title>Happy Birthday Mayiluu 💙🧡</title>
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #1687ff;
+    --blue-light: #61b9ff;
+    --blue-dark: #0755ad;
+
+    --orange: #ff8a24;
+    --orange-light: #ffb35c;
+    --orange-dark: #e55e12;
+
+    --dark: #020813;
+    --dark-blue: #06152f;
+
+    --white: #ffffff;
+    --muted: #b8c8df;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #174b88 0%,
+            #081d3d 35%,
+            #020813 100%
+        );
+}
+
+/* =========================================================
+   SCREEN
+========================================================= */
+
+.screen {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    overflow-y: auto;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.glow {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.23;
+
+    pointer-events: none;
+
+    animation: glowDrift 9s ease-in-out infinite;
+}
+
+@keyframes glowDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -15px) scale(1.12); }
+}
+
+.glow-blue {
+    background: var(--blue);
+
+    top: 0;
+    left: 0;
+}
+
+.glow-orange {
+    background: var(--orange);
+
+    right: 0;
+    bottom: 0;
+    animation-delay: 2s;
+}
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass {
+    position: relative;
+    z-index: 5;
+
+    width: min(94vw, 800px);
+
+    max-height: 94vh;
+
+    overflow-y: auto;
+
+    padding: 34px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    border-radius: 30px;
+
+    background:
+        rgba(4,17,38,0.78);
+
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,0.5);
+
+    text-align: center;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.glass.enter {
+    animation: cardEnter 0.65s cubic-bezier(.2,.8,.25,1);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1 {
+    font-size:
+        clamp(2.5rem, 9vw, 6.5rem);
+
+    line-height: 0.92;
+}
+
+h2 {
+    font-size:
+        clamp(1.8rem, 6vw, 3.5rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 12px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.gradient {
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue-light),
+            #ffffff,
+            var(--orange-light),
+            var(--blue-light)
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 300% center; }
+}
+
+.sub {
+    max-width: 620px;
+
+    margin:
+        16px auto 25px;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+.small {
+    font-size: 0.85rem;
+
+    color: #7187a7;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+button {
+    position: relative;
+    overflow: hidden;
+
+    border: 0;
+
+    padding:
+        14px 24px;
+
+    border-radius: 15px;
+
+    color: white;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            #625cff
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(22,135,255,0.25);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform:
+        translateY(-2px)
+        scale(1.02);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 60%);
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+button:active::after {
+    opacity: 1;
+    transform: scale(1.4);
+    transition: 0s;
+}
+
+.orange-button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            #ff4f64
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,138,36,0.25);
+
+    animation: readyPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes readyPulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(255,138,36,0.25); }
+    50% { box-shadow: 0 10px 40px rgba(255,138,36,0.55); }
+}
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+.heart-blue {
+    color: var(--blue-light);
+
+    text-shadow:
+        0 0 30px
+        rgba(22,135,255,0.7);
+}
+
+.heart-orange {
+    color: var(--orange-light);
+
+    text-shadow:
+        0 0 30px
+        rgba(255,138,36,0.7);
+}
+
+.main-heart {
+    font-size: 4.5rem;
+
+    display: inline-block;
+
+    animation:
+        heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+}
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.password-box {
+    display: flex;
+
+    gap: 10px;
+
+    max-width: 400px;
+
+    margin: 25px auto 0;
+}
+
+.password-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid
+        #31557f;
+
+    background:
+        #081a35;
+
+    color: white;
+
+    outline: none;
+
+    text-align: center;
+
+    letter-spacing: 7px;
+
+    font-size: 1.1rem;
+
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.password-box input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(22,135,255,0.18);
+}
+
+.password-box input.shake {
+    animation: shakeInput 0.45s;
+    border-color: #ff6b6b;
+}
+
+@keyframes shakeInput {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
+.error {
+    min-height: 25px;
+
+    margin-top: 8px;
+
+    color: #ff8d8d;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress {
+    height: 8px;
+
+    margin: 20px 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+.progress span {
+    display: block;
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--orange)
+        );
+
+    background-size: 200% 100%;
+
+    animation: progressShine 1.6s linear infinite;
+
+    transition: width 0.4s;
+}
+
+@keyframes progressShine {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* =========================================================
+   GAME 1
+   CATCH ORANGE HEARTS
+========================================================= */
+
+#catchGame {
+    position: relative;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #0b2e5c,
+            #041124
+        );
+}
+
+.falling-heart {
+    position: absolute;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    animation:
+        fallDown linear forwards;
+}
+
+@keyframes fallDown {
+
+    from {
+        transform:
+            translateY(-70px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(430px)
+            rotate(360deg);
+    }
+}
+
+.pop-heart {
+    position: absolute;
+    font-size: 30px;
+    pointer-events: none;
+    animation: popAway 0.4s ease forwards;
+}
+
+@keyframes popAway {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.1) translateY(-20px); opacity: 0; }
+}
+
+/* =========================================================
+   GAME 2
+   MEMORY
+========================================================= */
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    max-width: 500px;
+
+    margin: 25px auto;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c2b55,
+            #07152c
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s,
+        background 0.25s;
+}
+
+.memory-card:hover {
+    transform: scale(1.04);
+}
+
+.memory-card.open {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-dark),
+            #325fc9
+        );
+
+    animation: flipIn 0.35s ease;
+}
+
+@keyframes flipIn {
+    0% { transform: rotateY(90deg); }
+    100% { transform: rotateY(0deg); }
+}
+
+.memory-card.matched {
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange-dark),
+            var(--orange)
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255,138,36,0.25);
+
+    animation: matchPop 0.5s ease;
+}
+
+@keyframes matchPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.18) rotate(6deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+.memory-card.shake {
+    animation: cardShake 0.4s ease;
+}
+
+@keyframes cardShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* =========================================================
+   GAME 3
+   PROTECT HER HEART
+========================================================= */
+
+#protectGame {
+    position: relative;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle,
+            #102f59,
+            #030d1d
+        );
+}
+
+.protect-object {
+    position: absolute;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    animation:
+        protectFall linear forwards;
+}
+
+@keyframes protectFall {
+
+    from {
+        transform:
+            translateY(-60px)
+            rotate(0);
+    }
+
+    to {
+        transform:
+            translateY(430px)
+            rotate(360deg);
+    }
+}
+
+.protect-flash {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
+    pointer-events: none;
+    animation: flashOut 0.3s ease forwards;
+}
+
+@keyframes flashOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* =========================================================
+   GAME 4
+   CONNECT US
+========================================================= */
+
+.connection-area {
+    max-width: 600px;
+
+    margin: 25px auto;
+}
+
+.connection-hearts {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.connection-heart {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.connection-heart:hover {
+    transform: scale(1.1);
+}
+
+.connection-heart.selected {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--orange)
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255,138,36,0.35);
+
+    animation: selectPop 0.4s ease;
+}
+
+@keyframes selectPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.28); }
+    100% { transform: scale(1); }
+}
+
+.connection-heart.wrong {
+    animation: shakeInput 0.4s;
+}
+
+.connection-line {
+    flex: 1;
+
+    height: 3px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    position: relative;
+}
+
+.connection-line.active {
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--orange)
+        );
+
+    animation: lineGrow 0.4s ease;
+}
+
+@keyframes lineGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* =========================================================
+   GAME 5
+   HEARTBEAT
+========================================================= */
+
+.heartbeat-box {
+    position: relative;
+
+    max-width: 550px;
+
+    height: 220px;
+
+    margin: 25px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            #071c38,
+            #030c1d
+        );
+
+    overflow: hidden;
+}
+
+.heartbeat-line {
+    position: absolute;
+
+    width: 100%;
+
+    height: 3px;
+
+    background:
+        rgba(22,135,255,0.15);
+}
+
+.heartbeat-ring {
+    position: absolute;
+    border: 2px solid rgba(255,138,36,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ringExpand 0.6s ease-out forwards;
+}
+
+@keyframes ringExpand {
+    0% { width: 20px; height: 20px; opacity: 0.9; }
+    100% { width: 220px; height: 220px; opacity: 0; }
+}
+
+.pulse-heart {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 6rem;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform 0.1s;
+}
+
+.pulse-heart:active {
+    transform: scale(0.8);
+}
+
+/* =========================================================
+   LOVE METER
+========================================================= */
+
+.love-meter {
+    height: 22px;
+
+    max-width: 600px;
+
+    margin: 25px auto;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.07);
+}
+
+.love-meter span {
+    display: block;
+
+    width: 0;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--orange)
+        );
+
+    background-size: 200% 100%;
+
+    animation: progressShine 1.4s linear infinite;
+
+    transition: 0.15s;
+}
+
+#lovePercent.infinite {
+    animation: infinityGlow 1.1s ease-in-out infinite;
+}
+
+@keyframes infinityGlow {
+    0%, 100% { text-shadow: 0 0 15px rgba(255,138,36,0.5); transform: scale(1); }
+    50% { text-shadow: 0 0 35px rgba(255,138,36,0.9), 0 0 35px rgba(22,135,255,0.8); transform: scale(1.06); }
+}
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-heart {
+    font-size:
+        clamp(5rem, 18vw, 11rem);
+
+    animation:
+        finalBeat 1.3s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 35px
+            rgba(255,138,36,0.55)
+        );
+}
+
+@keyframes finalBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.14);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+}
+
+.wish {
+    max-width: 680px;
+
+    margin: 20px auto;
+
+    font-size:
+        clamp(1rem, 3.5vw, 1.45rem);
+
+    line-height: 1.8;
+
+    color: #edf5ff;
+
+    white-space: pre-line;
+}
+
+.signature {
+    color: var(--orange-light);
+
+    font-weight: 800;
+}
+
+/* =========================================================
+   FLOATING CELEBRATION
+========================================================= */
+
+#floating {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+.float {
+    position: absolute;
+
+    bottom: -60px;
+
+    animation:
+        floatUp linear forwards;
+}
+
+@keyframes floatUp {
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+.float.ambient {
+    filter: blur(0.2px);
+}
+
+.burst-particle {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 200;
+    animation: burstOut ease-out forwards;
+}
+
+@keyframes burstOut {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.3) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .glass {
+        padding: 24px 16px;
+
+        border-radius: 24px;
+
+        max-height: 96vh;
+    }
+
+    .password-box {
+        flex-direction: column;
+    }
+
+    #catchGame,
+    #protectGame {
+        height: 290px;
+    }
+
+    .memory-grid {
+        gap: 7px;
+    }
+
+    .memory-card {
+        font-size: 1.4rem;
+
+        border-radius: 13px;
+    }
+
+    .connection-heart {
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.4rem;
+    }
+
+    .connection-line {
+        min-width: 8px;
+    }
+
+    .pulse-heart {
+        font-size: 5rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING PARTICLES
+===================================================== -->
+
+<div id="floating"></div>
+
+
+<!-- =====================================================
+     SCREEN 1
+     PASSWORD
+===================================================== -->
+
+<section
+    class="screen active"
+    id="screen1">
+
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-orange"></div>
+
+    <div class="glass">
+
+        <div class="main-heart heart-blue">
+            💙
+        </div>
+
+        <h1 class="gradient">
+            Hey, Mayiluu...
+        </h1>
+
+        <p class="sub">
+
+            I made a little world
+            just for you.
+
+            <br><br>
+
+            But there's one tiny lock.
+
+            <br>
+
+            Only <b>my girl</b> knows the key. 👀
+
+        </p>
+
+        <div class="password-box">
+
+            <input
+                id="password"
+                type="password"
+                maxlength="4"
+                inputmode="numeric"
+                placeholder="••••">
+
+            <button
+                onclick="unlock()">
+
+                Enter 💙
+
+            </button>
+
+        </div>
+
+        <div
+            class="error"
+            id="passwordError">
+        </div>
+
+        <p class="small">
+            Hint: 4 special numbers 😉
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 2
+     INTRO
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen2">
+
+    <div class="glow glow-blue"></div>
+
+    <div class="glass">
+
+        <div class="main-heart">
+            💙🧡
+        </div>
+
+        <h2>
+            Welcome to
+            <br>
+
+            <span class="gradient">
+                Mayiluu's Love Quest
+            </span>
+        </h2>
+
+        <p class="sub">
+
+            Five little games,
+            all just for you.
+
+            <br><br>
+
+            Every game unlocks
+            another little piece
+            of my birthday wish for you.
+
+            <br><br>
+
+            No help, no hints from me —
+            this one's all you. 😏
+
+            <br><br>
+
+            Ready?
+
+        </p>
+
+        <button
+            onclick="showScreen(3)">
+
+            Let's Begin ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 3
+     GAME 1
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen3">
+
+    <div class="glass">
+
+        <div class="main-heart heart-orange">
+            🧡
+        </div>
+
+        <h2>
+            Catch My Girl's Hearts
+        </h2>
+
+        <p class="sub">
+
+            Catch <b>8 orange hearts</b>
+            before they disappear.
+
+            <br>
+
+            Careful — a few sneaky blue ones
+            will try to slip in too. 😌
+
+        </p>
+
+        <p>
+            Hearts:
+            <b id="catchScore">0</b>/8
+        </p>
+
+        <div
+            id="catchGame">
+        </div>
+
+        <div class="progress">
+            <span id="catchProgress"></span>
+        </div>
+
+        <button
+            id="catchNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(4)">
+
+            I caught them all 🧡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 4
+     GAME 2 MEMORY
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen4">
+
+    <div class="glass">
+
+        <div class="main-heart">
+            💙🧡
+        </div>
+
+        <h2>
+            Find Our Hearts
+        </h2>
+
+        <p class="sub">
+
+            Every heart has its match.
+
+            <br>
+
+            Find all the matching pairs
+            hiding behind the sparkles. ✨
+
+        </p>
+
+        <p>
+            Pairs:
+            <b id="memoryScore">0</b>/4
+        </p>
+
+        <div
+            class="memory-grid"
+            id="memoryGrid">
+        </div>
+
+        <button
+            id="memoryNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(5)">
+
+            Found them all 🥹
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 5
+     GAME 3 PROTECT HER HEART
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen5">
+
+    <div class="glass">
+
+        <div class="main-heart heart-orange">
+            🧡
+        </div>
+
+        <h2>
+            Protect My Girl's Heart
+        </h2>
+
+        <p class="sub">
+
+            Catch <b>10 shields</b>
+            before they hit the ground.
+
+            <br>
+
+            Don't let any broken hearts
+            slip through. 💔🚫
+
+        </p>
+
+        <p>
+            Shields collected:
+            <b id="protectScore">0</b>/10
+        </p>
+
+        <div
+            id="protectGame">
+        </div>
+
+        <div class="progress">
+            <span id="protectProgress"></span>
+        </div>
+
+        <button
+            id="protectNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(6)">
+
+            All shields collected 💙
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 6
+     GAME 4 CONNECT US
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen6">
+
+    <div class="glass">
+
+        <div class="main-heart">
+            💙🧡
+        </div>
+
+        <h2>
+            Connect Us
+        </h2>
+
+        <p class="sub">
+
+            Tap the hearts in the correct order.
+
+            <br><br>
+
+            <b>
+                💙 → 🧡 → 💙 → 🧡 → 💙
+            </b>
+
+            <br><br>
+
+            Because somehow,
+            my heart keeps finding yours.
+
+        </p>
+
+        <div class="connection-area">
+
+            <div
+                class="connection-hearts"
+                id="connectionHearts">
+
+                <div
+                    class="connection-heart"
+                    data-value="blue">
+                    💙
+                </div>
+
+                <div class="connection-line"></div>
+
+                <div
+                    class="connection-heart"
+                    data-value="orange">
+                    🧡
+                </div>
+
+                <div class="connection-line"></div>
+
+                <div
+                    class="connection-heart"
+                    data-value="blue">
+                    💙
+                </div>
+
+                <div class="connection-line"></div>
+
+                <div
+                    class="connection-heart"
+                    data-value="orange">
+                    🧡
+                </div>
+
+                <div class="connection-line"></div>
+
+                <div
+                    class="connection-heart"
+                    data-value="blue">
+                    💙
+                </div>
+
+            </div>
+
+        </div>
+
+        <p
+            id="connectionMessage"
+            class="sub">
+        </p>
+
+        <button
+            id="connectionNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(7)">
+
+            We're connected 💙🧡
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 7
+     GAME 5 HEARTBEAT
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen7">
+
+    <div class="glass">
+
+        <div class="main-heart heart-blue">
+            💙
+        </div>
+
+        <h2>
+            Heartbeat Challenge
+        </h2>
+
+        <p class="sub">
+
+            My heart beats for you.
+
+            <br>
+
+            Tap the heart
+            <b>12 times</b>
+            before the timer ends.
+
+        </p>
+
+        <p>
+
+            💙 Heartbeats:
+            <b id="beatScore">0</b>/12
+
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+
+            ⏱️
+            <b id="beatTime">12</b>s
+
+        </p>
+
+        <div class="heartbeat-box" id="heartbeatBox">
+
+            <div class="heartbeat-line"></div>
+
+            <div
+                class="pulse-heart"
+                id="pulseHeart"
+                onclick="beatHeart()">
+
+                💙
+
+            </div>
+
+        </div>
+
+        <p
+            id="beatMessage"
+            class="sub">
+        </p>
+
+        <button
+            id="beatNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(8)">
+
+            My heart is yours ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 8
+     LOVE METER
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen8">
+
+    <div class="glass">
+
+        <div class="main-heart">
+            💙🧡
+        </div>
+
+        <h2>
+            Measuring Our Love...
+        </h2>
+
+        <p class="sub">
+
+            The algorithm has analysed:
+
+            <br>
+
+            smiles + memories + madness
+            + late conversations
+            + you
+
+        </p>
+
+        <div class="love-meter">
+
+            <span id="loveBar"></span>
+
+        </div>
+
+        <h2 id="lovePercent">
+            0%
+        </h2>
+
+        <p
+            id="loveMessage"
+            class="sub">
+
+            Starting the boyfriend
+            love algorithm...
+
+        </p>
+
+        <button
+            id="loveNext"
+            class="orange-button"
+            style="display:none"
+            onclick="showScreen(9)">
+
+            Unlock My Letter 💌
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 9
+     LETTER
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen9">
+
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-orange"></div>
+
+    <div class="glass">
+
+        <div class="final-heart">
+            💙🧡
+        </div>
+
+        <h1 class="gradient">
+            Happy Birthday
+            <br>
+            Mayiluu! 🥹
+        </h1>
+
+        <p
+            class="wish"
+            id="birthdayMessage">
+        </p>
+
+        <p class="signature">
+            — From your blue heart 💙
+        </p>
+
+        <br>
+
+        <button
+            class="orange-button"
+            onclick="finalSurprise()">
+
+            One Last Surprise ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCREEN 10
+     FINAL
+===================================================== -->
+
+<section
+    class="screen"
+    id="screen10">
+
+    <div class="glow glow-blue"></div>
+    <div class="glow glow-orange"></div>
+
+    <div class="glass">
+
+        <div class="final-heart">
+            💙🧡
+        </div>
+
+        <h1 class="gradient">
+            Happy Birthday,
+            <br>
+            My Mayiluu ❤️
+        </h1>
+
+        <p class="wish">
+
+            💙 is me.
+
+            <br>
+
+            🧡 is you.
+
+            <br>
+
+            And together...
+
+            <br><br>
+
+            <b>
+                💙 + 🧡 = Us
+            </b>
+
+            <br><br>
+
+            In a world full of people,
+            somehow my heart found yours.
+
+            <br><br>
+
+            I don't know what every tomorrow
+            will look like...
+
+            <br>
+
+            but I know I want
+            a lot more tomorrows
+            with you.
+
+            <br><br>
+
+            So keep smiling.
+            Keep dreaming.
+            Keep being the beautiful,
+            crazy Mayiluu that you are.
+
+            <br><br>
+
+            And remember...
+
+            <br>
+
+            <span class="heart-blue">
+                I'll always be your 💙
+            </span>
+
+            <br>
+
+            and you'll always be
+            <span class="heart-orange">
+                my 🧡.
+            </span>
+
+            <br><br>
+
+            <b>
+                Happy Birthday, Mayiluu.
+                🥹❤️
+            </b>
+
+        </p>
+
+        <div class="main-heart">
+            💙🧡
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   SCREEN NAVIGATION
+========================================================= */
+
+const screens =
+    Array.from(
+        document.querySelectorAll(".screen")
+    );
+
+
+function showScreen(number) {
+
+    screens.forEach(
+        function(screen, index) {
+
+            screen.classList.toggle(
+                "active",
+                index === number - 1
+            );
+
+        }
+    );
+
+
+    const activeScreen = screens[number - 1];
+
+    if (activeScreen) {
+
+        const glass = activeScreen.querySelector(".glass");
+
+        if (glass) {
+
+            glass.classList.remove("enter");
+
+            void glass.offsetWidth;
+
+            glass.classList.add("enter");
+
+        }
+
+    }
+
+
+    if (number === 3) {
+        startCatchGame();
+    }
+
+    if (number === 4) {
+        startMemoryGame();
+    }
+
+    if (number === 5) {
+        startProtectGame();
+    }
+
+    if (number === 6) {
+        startConnectionGame();
+    }
+
+    if (number === 7) {
+        startHeartbeatGame();
+    }
+
+    if (number === 8) {
+        startLoveMeter();
+    }
+
+    if (number === 9) {
+        typeBirthdayMessage();
+    }
+
+}
+
+
+/* =========================================================
+   CELEBRATION BURST (generic mini-animation surprise)
+========================================================= */
+
+function celebrationBurst(targetId, symbols, count) {
+
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+        return;
+    }
+
+    const rect = target.getBoundingClientRect();
+
+    const container = document.getElementById("floating");
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+
+    for (let i = 0; i < count; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.className = "burst-particle";
+
+        particle.textContent =
+            symbols[
+                Math.floor(Math.random() * symbols.length)
+            ];
+
+        particle.style.left = centerX + "px";
+        particle.style.top = centerY + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 70 + Math.random() * 170;
+
+        particle.style.setProperty(
+            "--dx",
+            Math.cos(angle) * distance + "px"
+        );
+
+        particle.style.setProperty(
+            "--dy",
+            Math.sin(angle) * distance + "px"
+        );
+
+        particle.style.fontSize =
+            (16 + Math.random() * 22) + "px";
+
+        particle.style.animationDuration =
+            (0.7 + Math.random() * 0.7) + "s";
+
+        container.appendChild(particle);
+
+        setTimeout(
+            function() {
+                particle.remove();
+            },
+            1600
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   AMBIENT FLOATING HEARTS (plays continuously in background)
+========================================================= */
+
+function spawnAmbientHeart() {
+
+    const symbols = ["💙", "🧡"];
+
+    const particle = document.createElement("span");
+
+    particle.className = "float ambient";
+
+    particle.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    particle.style.left = Math.random() * 100 + "%";
+
+    particle.style.fontSize =
+        (10 + Math.random() * 16) + "px";
+
+    particle.style.opacity =
+        0.12 + Math.random() * 0.18;
+
+    particle.style.animationDuration =
+        (9 + Math.random() * 7) + "s";
+
+    document.getElementById("floating").appendChild(particle);
+
+    setTimeout(
+        function() {
+            particle.remove();
+        },
+        17000
+    );
+
+}
+
+setInterval(spawnAmbientHeart, 1100);
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+function unlock() {
+
+    const input =
+        document.getElementById(
+            "password"
+        );
+
+    const value = input.value;
+
+    const error =
+        document.getElementById(
+            "passwordError"
+        );
+
+
+    if (value === "1811") {
+
+        error.textContent = "";
+
+        showScreen(2);
+
+    } else {
+
+        error.textContent =
+            "Wrong key 😏 Try again, my girl.";
+
+        input.value = "";
+
+        input.classList.remove("shake");
+
+        void input.offsetWidth;
+
+        input.classList.add("shake");
+
+    }
+
+}
+
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Enter") {
+                unlock();
+            }
+
+        }
+    );
+
+
+/* =========================================================
+   GAME 1
+   CATCH ORANGE HEARTS
+========================================================= */
+
+let catchStarted = false;
+
+let catchScore = 0;
+
+
+function startCatchGame() {
+
+    if (catchStarted) {
+        return;
+    }
+
+    catchStarted = true;
+
+
+    const game =
+        document.getElementById(
+            "catchGame"
+        );
+
+
+    const timer =
+        setInterval(
+            function() {
+
+                if (catchScore >= 8) {
+
+                    clearInterval(timer);
+
+                    return;
+
+                }
+
+
+                const heart =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                heart.className =
+                    "falling-heart";
+
+
+                heart.textContent =
+                    Math.random() > 0.18
+                        ? "🧡"
+                        : "💙";
+
+
+                heart.style.left =
+                    (4 + Math.random() * 90)
+                    + "%";
+
+
+                heart.style.animationDuration =
+                    (2.3 + Math.random() * 1.8)
+                    + "s";
+
+
+                heart.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            heart.dataset.clicked
+                        ) {
+                            return;
+                        }
+
+
+                        heart.dataset.clicked =
+                            "true";
+
+
+                        if (
+                            heart.textContent ===
+                            "🧡"
+                        ) {
+
+                            catchScore++;
+
+
+                            document
+                                .getElementById(
+                                    "catchScore"
+                                )
+                                .textContent =
+                                catchScore;
+
+
+                            document
+                                .getElementById(
+                                    "catchProgress"
+                                )
+                                .style.width =
+                                (
+                                    catchScore / 8 * 100
+                                ) + "%";
+
+
+                            heart.textContent =
+                                "💖";
+
+
+                            const popRect =
+                                heart.getBoundingClientRect();
+
+                            celebrationBurst(
+                                "catchGame",
+                                ["✨"],
+                                3
+                            );
+
+
+                            if (
+                                catchScore >= 8
+                            ) {
+
+                                document
+                                    .getElementById(
+                                        "catchNext"
+                                    )
+                                    .style.display =
+                                    "inline-block";
+
+                                celebrationBurst(
+                                    "catchGame",
+                                    ["💖", "✨", "🧡"],
+                                    32
+                                );
+
+                            }
+
+                        } else {
+
+                            heart.textContent =
+                                "💙";
+
+                        }
+
+
+                        setTimeout(
+                            function() {
+                                heart.remove();
+                            },
+                            180
+                        );
+
+                    }
+                );
+
+
+                game.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        if (
+                            heart.parentNode
+                        ) {
+
+                            heart.remove();
+
+                        }
+
+                    },
+                    5000
+                );
+
+            },
+            550
+        );
+
+}
+
+
+/* =========================================================
+   GAME 2
+   MEMORY
+========================================================= */
+
+let memoryStarted = false;
+
+let memoryFirst = null;
+
+let memorySecond = null;
+
+let memoryLocked = false;
+
+let memoryMatches = 0;
+
+
+function startMemoryGame() {
+
+    if (memoryStarted) {
+        return;
+    }
+
+    memoryStarted = true;
+
+
+    const grid =
+        document.getElementById(
+            "memoryGrid"
+        );
+
+
+    const cards = [
+        "💙",
+        "💙",
+        "🧡",
+        "🧡",
+        "💙",
+        "💙",
+        "🧡",
+        "🧡"
+    ];
+
+
+    cards.sort(
+        function() {
+            return Math.random() - 0.5;
+        }
+    );
+
+
+    cards.forEach(
+        function(symbol) {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "memory-card";
+
+
+            card.dataset.symbol =
+                symbol;
+
+
+            card.textContent =
+                "💫";
+
+
+            card.addEventListener(
+                "click",
+                function() {
+
+                    flipMemoryCard(card);
+
+                }
+            );
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+function flipMemoryCard(card) {
+
+    if (
+        memoryLocked ||
+        card === memoryFirst ||
+        card.classList.contains("matched")
+    ) {
+
+        return;
+
+    }
+
+
+    card.classList.add(
+        "open"
+    );
+
+
+    card.textContent =
+        card.dataset.symbol;
+
+
+    if (!memoryFirst) {
+
+        memoryFirst = card;
+
+        return;
+
+    }
+
+
+    memorySecond = card;
+
+    memoryLocked = true;
+
+
+    if (
+        memoryFirst.dataset.symbol ===
+        memorySecond.dataset.symbol
+    ) {
+
+        memoryMatches++;
+
+
+        memoryFirst.classList.add(
+            "matched"
+        );
+
+        memorySecond.classList.add(
+            "matched"
+        );
+
+
+        document
+            .getElementById(
+                "memoryScore"
+            )
+            .textContent =
+            memoryMatches;
+
+
+        memoryFirst = null;
+
+        memorySecond = null;
+
+        memoryLocked = false;
+
+
+        if (
+            memoryMatches === 4
+        ) {
+
+            document
+                .getElementById(
+                    "memoryNext"
+                )
+                .style.display =
+                "inline-block";
+
+            celebrationBurst(
+                "memoryGrid",
+                ["💙", "🧡", "✨", "💖"],
+                34
+            );
+
+        }
+
+    } else {
+
+        memoryFirst.classList.add("shake");
+        memorySecond.classList.add("shake");
+
+        setTimeout(
+            function() {
+
+                memoryFirst.classList.remove(
+                    "open"
+                );
+
+                memorySecond.classList.remove(
+                    "open"
+                );
+
+                memoryFirst.classList.remove("shake");
+                memorySecond.classList.remove("shake");
+
+
+                memoryFirst.textContent =
+                    "💫";
+
+                memorySecond.textContent =
+                    "💫";
+
+
+                memoryFirst = null;
+
+                memorySecond = null;
+
+                memoryLocked = false;
+
+            },
+            750
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   GAME 3
+   PROTECT HER HEART
+========================================================= */
+
+let protectStarted = false;
+
+let protectScore = 0;
+
+
+function startProtectGame() {
+
+    if (protectStarted) {
+        return;
+    }
+
+    protectStarted = true;
+
+
+    const game =
+        document.getElementById(
+            "protectGame"
+        );
+
+
+    const timer =
+        setInterval(
+            function() {
+
+                if (
+                    protectScore >= 10
+                ) {
+
+                    clearInterval(timer);
+
+                    return;
+
+                }
+
+
+                const object =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                object.className =
+                    "protect-object";
+
+
+                const shield =
+                    Math.random() > 0.25;
+
+
+                object.textContent =
+                    shield
+                        ? "💙"
+                        : "💔";
+
+
+                object.style.left =
+                    (
+                        5 +
+                        Math.random() * 88
+                    ) + "%";
+
+
+                object.style.animationDuration =
+                    (
+                        2 +
+                        Math.random() * 2
+                    ) + "s";
+
+
+                object.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            object.dataset.clicked
+                        ) {
+                            return;
+                        }
+
+
+                        object.dataset.clicked =
+                            "true";
+
+
+                        if (shield) {
+
+                            protectScore++;
+
+
+                            document
+                                .getElementById(
+                                    "protectScore"
+                                )
+                                .textContent =
+                                protectScore;
+
+
+                            document
+                                .getElementById(
+                                    "protectProgress"
+                                )
+                                .style.width =
+                                (
+                                    protectScore / 10 * 100
+                                ) + "%";
+
+
+                            object.textContent =
+                                "🛡️";
+
+
+                            const flash =
+                                document.createElement("div");
+
+                            flash.className = "protect-flash";
+
+                            game.appendChild(flash);
+
+                            setTimeout(
+                                function() {
+                                    flash.remove();
+                                },
+                                320
+                            );
+
+
+                            if (
+                                protectScore >= 10
+                            ) {
+
+                                document
+                                    .getElementById(
+                                        "protectNext"
+                                    )
+                                    .style.display =
+                                    "inline-block";
+
+                                celebrationBurst(
+                                    "protectGame",
+                                    ["🛡️", "💙", "✨"],
+                                    32
+                                );
+
+                            }
+
+                        } else {
+
+                            object.textContent =
+                                "💥";
+
+                        }
+
+
+                        setTimeout(
+                            function() {
+                                object.remove();
+                            },
+                            160
+                        );
+
+                    }
+                );
+
+
+                game.appendChild(
+                    object
+                );
+
+
+                setTimeout(
+                    function() {
+
+                        if (
+                            object.parentNode
+                        ) {
+                            object.remove();
+                        }
+
+                    },
+                    4500
+                );
+
+            },
+            480
+        );
+
+}
+
+
+/* =========================================================
+   GAME 4
+   CONNECT US
+========================================================= */
+
+let connectionStarted = false;
+
+let connectionIndex = 0;
+
+
+function startConnectionGame() {
+
+    if (connectionStarted) {
+        return;
+    }
+
+    connectionStarted = true;
+
+
+    const hearts =
+        document.querySelectorAll(
+            ".connection-heart"
+        );
+
+
+    const lines =
+        document.querySelectorAll(
+            ".connection-line"
+        );
+
+
+    const correctOrder = [
+        "blue",
+        "orange",
+        "blue",
+        "orange",
+        "blue"
+    ];
+
+
+    hearts.forEach(
+        function(heart, index) {
+
+            heart.addEventListener(
+                "click",
+                function() {
+
+                    const value =
+                        heart.dataset.value;
+
+
+                    if (
+                        value ===
+                        correctOrder[
+                            connectionIndex
+                        ]
+                    ) {
+
+                        heart.classList.remove("selected");
+
+                        void heart.offsetWidth;
+
+                        heart.classList.add(
+                            "selected"
+                        );
+
+
+                        if (
+                            connectionIndex >
+                            0
+                        ) {
+
+                            lines[
+                                connectionIndex - 1
+                            ].classList.add(
+                                "active"
+                            );
+
+                        }
+
+
+                        connectionIndex++;
+
+
+                        if (
+                            connectionIndex ===
+                            correctOrder.length
+                        ) {
+
+                            document
+                                .getElementById(
+                                    "connectionMessage"
+                                )
+                                .innerHTML =
+                                "💙 + 🧡 = ❤️<br>" +
+                                "<b>Somehow, we just fit.</b>";
+
+
+                            document
+                                .getElementById(
+                                    "connectionNext"
+                                )
+                                .style.display =
+                                "inline-block";
+
+                            celebrationBurst(
+                                "connectionHearts",
+                                ["❤️", "💫", "✨"],
+                                32
+                            );
+
+                        }
+
+                    } else {
+
+                        connectionIndex = 0;
+
+
+                        hearts.forEach(
+                            function(item) {
+
+                                item.classList.remove(
+                                    "selected"
+                                );
+
+                                item.classList.remove("wrong");
+
+                            }
+                        );
+
+
+                        heart.classList.add("wrong");
+
+
+                        lines.forEach(
+                            function(line) {
+
+                                line.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        document
+                            .getElementById(
+                                "connectionMessage"
+                            )
+                            .textContent =
+                            "Oops 😌 Start again. " +
+                            "It always starts with 💙.";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   GAME 5
+   HEARTBEAT
+========================================================= */
+
+let heartbeatStarted = false;
+
+let beatScore = 0;
+
+let beatTime = 12;
+
+let beatTimer = null;
+
+
+function startHeartbeatGame() {
+
+    if (heartbeatStarted) {
+        return;
+    }
+
+    heartbeatStarted = true;
+
+
+    beatScore = 0;
+
+    beatTime = 12;
+
+
+    document
+        .getElementById(
+            "beatScore"
+        )
+        .textContent =
+        "0";
+
+
+    document
+        .getElementById(
+            "beatTime"
+        )
+        .textContent =
+        "12";
+
+
+    beatTimer =
+        setInterval(
+            function() {
+
+                beatTime--;
+
+
+                document
+                    .getElementById(
+                        "beatTime"
+                    )
+                    .textContent =
+                    beatTime;
+
+
+                if (
+                    beatTime <= 0
+                ) {
+
+                    clearInterval(
+                        beatTimer
+                    );
+
+
+                    if (
+                        beatScore < 12
+                    ) {
+
+                        document
+                            .getElementById(
+                                "beatMessage"
+                            )
+                            .textContent =
+                            "My heart is still waiting... try again ❤️";
+
+
+                        heartbeatStarted =
+                            false;
+
+
+                        setTimeout(
+                            function() {
+
+                                if (
+                                    document
+                                        .getElementById(
+                                            "screen7"
+                                        )
+                                        .classList
+                                        .contains(
+                                            "active"
+                                        )
+                                ) {
+
+                                    startHeartbeatGame();
+
+                                }
+
+                            },
+                            1200
+                        );
+
+                    }
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+function beatHeart() {
+
+    if (!heartbeatStarted) {
+        return;
+    }
+
+
+    beatScore++;
+
+
+    document
+        .getElementById(
+            "beatScore"
+        )
+        .textContent =
+        beatScore;
+
+
+    const heart =
+        document.getElementById(
+            "pulseHeart"
+        );
+
+
+    heart.style.transform =
+        "scale(0.78)";
+
+
+    setTimeout(
+        function() {
+
+            heart.style.transform =
+                "";
+
+        },
+        100
+    );
+
+
+    const ring =
+        document.createElement("div");
+
+    ring.className = "heartbeat-ring";
+
+    const box = document.getElementById("heartbeatBox");
+
+    ring.style.left =
+        (box.clientWidth / 2 - 10) + "px";
+
+    ring.style.top =
+        (box.clientHeight / 2 - 10) + "px";
+
+    box.appendChild(ring);
+
+    setTimeout(
+        function() {
+            ring.remove();
+        },
+        650
+    );
+
+
+    if (
+        beatScore >= 12
+    ) {
+
+        heartbeatStarted =
+            false;
+
+
+        clearInterval(
+            beatTimer
+        );
+
+
+        document
+            .getElementById(
+                "beatMessage"
+            )
+            .innerHTML =
+            "❤️ 12 heartbeats unlocked.<br>" +
+            "<b>Every beat is for my girl.</b>";
+
+
+        document
+            .getElementById(
+                "beatNext"
+            )
+            .style.display =
+            "inline-block";
+
+        celebrationBurst(
+            "pulseHeart",
+            ["❤️", "💓", "✨"],
+            32
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOVE METER
+========================================================= */
+
+let loveMeterStarted = false;
+
+
+function startLoveMeter() {
+
+    if (loveMeterStarted) {
+        return;
+    }
+
+    loveMeterStarted = true;
+
+
+    let value = 0;
+
+
+    const bar =
+        document.getElementById(
+            "loveBar"
+        );
+
+
+    const percent =
+        document.getElementById(
+            "lovePercent"
+        );
+
+
+    const message =
+        document.getElementById(
+            "loveMessage"
+        );
+
+
+    const timer =
+        setInterval(
+            function() {
+
+                value +=
+                    Math.floor(
+                        Math.random() * 7
+                    ) + 3;
+
+
+                if (
+                    value >= 100
+                ) {
+
+                    value = 100;
+
+
+                    clearInterval(
+                        timer
+                    );
+
+
+                    message.innerHTML =
+                        "Result: <b>∞%</b> 💙🧡<br>" +
+                        "The calculator gave up. " +
+                        "Apparently our love doesn't fit inside 100%.";
+
+                    percent.textContent = "∞%";
+
+                    percent.classList.add("infinite");
+
+
+                    document
+                        .getElementById(
+                            "loveNext"
+                        )
+                        .style.display =
+                        "inline-block";
+
+                    celebrationBurst(
+                        "loveBar",
+                        ["💙", "🧡", "♾️", "✨"],
+                        40
+                    );
+
+                    bar.style.width = "100%";
+
+                    return;
+
+                }
+
+
+                bar.style.width =
+                    value + "%";
+
+
+                percent.textContent =
+                    value + "%";
+
+
+                if (
+                    value < 25
+                ) {
+
+                    message.textContent =
+                        "Finding the butterflies...";
+
+                } else if (
+                    value < 50
+                ) {
+
+                    message.textContent =
+                        "Detecting Mayiluu smiles...";
+
+                } else if (
+                    value < 75
+                ) {
+
+                    message.textContent =
+                        "Analysing our chaos...";
+
+                } else if (
+                    value < 95
+                ) {
+
+                    message.textContent =
+                        "Warning: too much love detected...";
+
+                }
+
+            },
+            120
+        );
+
+}
+
+
+/* =========================================================
+   BIRTHDAY LETTER
+========================================================= */
+
+let messageStarted = false;
+
+
+function typeBirthdayMessage() {
+
+    if (messageStarted) {
+        return;
+    }
+
+    messageStarted = true;
+
+
+    const message =
+`My Mayiluu,
+
+Today isn't just the day you were born.
+
+It's the day someone incredibly special
+came into this world.
+
+And somehow,
+years later,
+I got lucky enough to have you
+in my life. 💙
+
+You are my favourite person,
+my favourite chaos,
+my favourite smile,
+and my favourite notification. 😌
+
+I hope this new year of your life
+gives you everything your heart wants.
+
+More happiness.
+More adventures.
+More dreams coming true.
+More reasons to smile.
+
+And selfishly...
+
+I hope it gives us
+many more memories together. 🧡
+
+I may not always have
+the perfect words...
+
+but I hope you always know
+how special you are to me.
+
+Happy Birthday, Mayiluu.
+
+Keep smiling.
+Keep shining.
+Keep being you.
+
+Your blue heart will always
+be somewhere beside your orange heart. 💙🧡`;
+
+
+    const element =
+        document.getElementById(
+            "birthdayMessage"
+        );
+
+
+    let index = 0;
+
+
+    const timer =
+        setInterval(
+            function() {
+
+                element.textContent =
+                    message.slice(
+                        0,
+                        index
+                    );
+
+
+                index++;
+
+
+                if (
+                    index >
+                    message.length
+                ) {
+
+                    clearInterval(
+                        timer
+                    );
+
+                }
+
+            },
+            20
+        );
+
+}
+
+
+/* =========================================================
+   FINAL SURPRISE
+========================================================= */
+
+function finalSurprise() {
+
+    showScreen(10);
+
+
+    const container =
+        document.getElementById(
+            "floating"
+        );
+
+
+    const symbols = [
+        "💙",
+        "🧡",
+        "❤️",
+        "💫",
+        "✨",
+        "🎉",
+        "🥹",
+        "💖"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 140;
+        i++
+    ) {
+
+        const particle =
+            document.createElement(
+                "span"
+            );
+
+
+        particle.className =
+            "float";
+
+
+        particle.textContent =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+
+        particle.style.fontSize =
+            (
+                14 +
+                Math.random() * 32
+            ) + "px";
+
+
+        particle.style.animationDuration =
+            (
+                3 +
+                Math.random() * 6
+            ) + "s";
+
+
+        particle.style.animationDelay =
+            Math.random() * 2 + "s";
+
+
+        container.appendChild(
+            particle
+        );
+
+
+        setTimeout(
+            function() {
+
+                particle.remove();
+
+            },
+            11000
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
